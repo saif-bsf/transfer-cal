@@ -1,0 +1,19 @@
+{
+    "currencyList": [
+        {
+            "countryId": "US",
+            "currency": "USD",
+            "countryFlag": "🇺🇸"
+        },
+        {
+            "countryId": "BNG",
+            "currency": "BDT",
+            "countryFlag": "🇧🇩"
+        },
+        {
+            "countryId": "IND",
+            "currency": "INR",
+            "countryFlag": "🇮🇳"
+        }
+    ]
+}
