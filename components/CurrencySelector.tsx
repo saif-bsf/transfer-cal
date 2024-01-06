@@ -1,29 +1,97 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import Input from "./Input";
+import Input from "./base/Input";
 import { Colors } from "../constants/colors";
-import useCurrency from "../hooks/useCurrency";
+import RNPickerSelect from "react-native-picker-select";
+import { Ionicons } from "@expo/vector-icons";
 
-const CurrencySelector = () => {
-  const { currencyList } = useCurrency();
+type Props = {
+  flag: string;
+  currencyCode: string;
+  label: string;
+  isSourceCurrency: boolean;
+  currencies?: Array<{
+    label: string;
+    value: string;
+  }>;
+  resultAmount?: string;
+  onCurrencyChange?: (selectedCurrency: string) => void;
+  onInputChange?: (value: string) => void;
+};
+
+const CurrencySelector = ({
+  flag,
+  currencyCode,
+  label,
+  currencies,
+  isSourceCurrency,
+  resultAmount,
+  onInputChange,
+  onCurrencyChange,
+}: Props) => {
   return (
     <View style={styles.container}>
-      <View style={styles.flag}>
-        <Text>You send exactly</Text>
-        <Text>Flag</Text>
+      <View style={styles.flagContainer}>
+        <Text style={styles.label}>{label}</Text>
+        {isSourceCurrency && (
+          <Text style={styles.flagLabel}>
+            {flag} {currencyCode}
+          </Text>
+        )}
+        {!isSourceCurrency && (
+          <RNPickerSelect
+            value={currencyCode}
+            onValueChange={(itemValue, itemIndex) =>
+              onCurrencyChange && onCurrencyChange(itemValue)
+            }
+            items={currencies || []}
+            style={pickerSelectStyles}
+            Icon={() => (
+              <Ionicons name="chevron-down" size={24} color="white" />
+            )}
+          />
+        )}
       </View>
-      <Input />
+      <Input
+        onChange={onInputChange}
+        resultAmount={resultAmount}
+        isSourceCurrency={isSourceCurrency}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    margin: 8,
+    flexDirection: "row",
+    width: "100%",
   },
-  flag: {
-    padding: 8,
+  flagContainer: {
+    padding: 16,
+    zIndex: 1,
+    left: 12,
+    minWidth: 140,
     backgroundColor: Colors.primary100,
+    borderRadius: 12,
+    color: "white",
+  },
+  label: {
+    color: "white",
+  },
+  flagLabel: {
+    fontSize: 24,
+    color: "white",
+  },
+});
+
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+    fontSize: 24,
+    color: "white",
+  },
+  inputAndroid: {
+    fontSize: 24,
+    color: "white",
   },
 });
 

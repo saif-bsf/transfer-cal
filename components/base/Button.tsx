@@ -1,14 +1,11 @@
 import { ReactNode } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import { Colors } from "../constants/colors";
+import { Colors } from "../../constants/colors";
 
-const Button = ({ children, onPress }: { children: ReactNode }) => {
+const Button = ({ children }: { children: ReactNode }) => {
   return (
     <View style={styles.buttonContainer}>
-      <Pressable
-        onPress={onPress}
-        style={({ pressed }) => pressed && styles.pressed}
-      >
+      <Pressable style={({ pressed }) => pressed && styles.pressed}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>{children}</Text>
         </View>

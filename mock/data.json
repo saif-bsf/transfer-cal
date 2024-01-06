@@ -1,19 +1,40 @@
 {
-    "currencyList": [
+    "currencyListData": [
+        {
+            "countryId": "UAE",
+            "currencyName": "AED",
+            "countryFlag": "🇦🇪",
+            "rate": "1"
+        },
         {
             "countryId": "US",
-            "currency": "USD",
-            "countryFlag": "🇺🇸"
+            "currencyName": "USD",
+            "countryFlag": "🇺🇸",
+            "rate": "0.27"
         },
         {
             "countryId": "BNG",
-            "currency": "BDT",
-            "countryFlag": "🇧🇩"
+            "currencyName": "BDT",
+            "countryFlag": "🇧🇩",
+            "rate": "29.89"
         },
         {
             "countryId": "IND",
-            "currency": "INR",
-            "countryFlag": "🇮🇳"
+            "currencyName": "INR",
+            "countryFlag": "🇮🇳",
+            "rate": "22.7"
+        },
+        {
+            "countryId": "PHL",
+            "currencyName": "PHP",
+            "countryFlag": "🇵🇭",
+            "rate": "15.13"
+        },
+        {
+            "countryId": "EURO",
+            "currencyName": "EUR",
+            "countryFlag": "🇪🇺",
+            "rate": "0.25"
         }
     ]
 }

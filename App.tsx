@@ -1,23 +1,35 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
-import Button from "./components/Button";
-import CurrencySelector from "./components/CurrencySelector";
+import {
+  Keyboard,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+} from "react-native";
+import CurrencyConverter from "./components/CurrencyConverter";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <CurrencySelector />
-      <Button>Start transfer</Button>
-    </View>
+    <TouchableWithoutFeedback
+      style={styles.container}
+      onPress={Keyboard.dismiss}
+    >
+      <View style={styles.innerContainer}>
+        <StatusBar style="auto" />
+        <CurrencyConverter />
+      </View>
+    </TouchableWithoutFeedback>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
+  },
+  innerContainer: {
+    flex: 1,
+    paddingHorizontal: 16,
   },
 });
