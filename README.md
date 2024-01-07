@@ -1,5 +1,9 @@
 # Transfer-Cal
 
+## Paper Work - Component Structure
+
+![Component Structure](./assets/component-structure.png "Paper Work")
+
 ## Introduction
 
 Welcome to Transfer-Cal, a React Native project designed for currency exchange converter. This project is built using Expo and a range of dependencies to ensure a seamless user experience.
