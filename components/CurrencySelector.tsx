@@ -23,7 +23,7 @@ const CurrencySelector = ({
   flag,
   currencyCode,
   label,
-  currencies,
+  currencies = [],
   isSourceCurrency,
   resultAmount,
   onInputChange,
@@ -41,10 +41,11 @@ const CurrencySelector = ({
         {!isSourceCurrency && (
           <RNPickerSelect
             value={currencyCode}
+            useNativeAndroidPickerStyle={false}
             onValueChange={(itemValue, itemIndex) =>
               onCurrencyChange && onCurrencyChange(itemValue)
             }
-            items={currencies || []}
+            items={currencies}
             style={pickerSelectStyles}
             Icon={() => (
               <Ionicons name="chevron-down" size={24} color="white" />

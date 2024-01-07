@@ -13,6 +13,24 @@
             "rate": "0.27"
         },
         {
+            "countryId": "CAN",
+            "currencyName": "CAD",
+            "countryFlag": "🇨🇦",
+            "rate": "0.36"
+        },
+        {
+            "countryId": "SA",
+            "currencyName": "SAR",
+            "countryFlag": "🇸🇦",
+            "rate": "1.02"
+        },
+        {
+            "countryId": "QTR",
+            "currencyName": "QAR",
+            "countryFlag": "🇶🇦",
+            "rate": "0.99"
+        },
+        {
             "countryId": "BNG",
             "currencyName": "BDT",
             "countryFlag": "🇧🇩",
